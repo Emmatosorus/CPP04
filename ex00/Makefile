@@ -1,6 +1,6 @@
 NAME = Polymorphe
 CPP = c++
-CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 OBJ_DIR = .obj/
 
 # ---------- Sources --------- #
@@ -9,7 +9,9 @@ SRC = \
 	main.cpp \
 	Animal.cpp \
 	Dog.cpp \
-	Cat.cpp
+	Cat.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp
 
 OBJ =	$(SRC:%.cpp=$(OBJ_DIR)%.o)
 
