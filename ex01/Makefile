@@ -1,4 +1,4 @@
-NAME = Polymorphe
+NAME = Burn
 CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 OBJ_DIR = .obj/
@@ -11,7 +11,8 @@ SRC = \
 	Dog.cpp \
 	Cat.cpp \
 	WrongAnimal.cpp \
-	WrongCat.cpp
+	WrongCat.cpp \
+	Brain.cpp
 
 OBJ =	$(SRC:%.cpp=$(OBJ_DIR)%.o)
 

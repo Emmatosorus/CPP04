@@ -2,6 +2,7 @@
 # define CAT_H
 
 #include "Animal.h"
+#include "Brain.h"
 
 class Cat : public Animal
 {
@@ -16,6 +17,9 @@ class Cat : public Animal
 
 	protected:
 		std::string type;
+
+	private:
+		Brain * brain;
 };
 
 #endif
