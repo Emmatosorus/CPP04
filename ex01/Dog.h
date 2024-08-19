@@ -2,6 +2,7 @@
 # define DOG_H
 
 #include "Animal.h"
+#include "Brain.h"
 
 class Dog : public Animal
 {
@@ -16,6 +17,9 @@ class Dog : public Animal
 
 	protected:
 		std::string type;
+
+	private:
+		Brain * brain;
 };
 
 #endif

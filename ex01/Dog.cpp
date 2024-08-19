@@ -3,16 +3,19 @@
 Dog::Dog() : Animal()
 {
 	this->type = "Dog";
+	this->brain = new Brain();
 	std::cout << this->type << " : Default constructor called!" << std::endl;
 }
 
 Dog::Dog(Dog &c) : Animal( c )
 {
+	this->brain = new Brain();
 	std::cout << this->type << " : Copy constructor called!" << std::endl;
 }
 
 Dog::~Dog()
 {
+	delete this->brain;
 	std::cout << this->type << " : Destructor called!" << std::endl;
 }
 
