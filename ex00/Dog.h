@@ -8,9 +8,10 @@ class Dog : public Animal
 	public:
 		Dog();
 		Dog( Dog & a);
-		~Dog();
+		virtual ~Dog();
 
 		Dog & operator=( Dog const & thing);
+		std::string	getType( void ) const;
 		void	makeSound( void ) const;
 
 	protected:
