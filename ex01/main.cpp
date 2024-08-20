@@ -17,72 +17,47 @@ int main( void )
 		s1->ideas[4] = "Steve!";
 
 		s2 = *s1;
-		for (int i = 0; i < 5; i++)
-			std::cout << s2.ideas[i];
+
 		std::cout << std::endl;
 
-		s1 = new Brain(s2);
 		for (int i = 0; i < 5; i++)
 			std::cout << s2.ideas[i];
+		std::cout << std::endl << std::endl;
+
+		delete s1;
+		s1 = new Brain(s2);
+
 		std::cout << std::endl;
+
+		for (int i = 0; i < 5; i++)
+			std::cout << s2.ideas[i];
+		std::cout << std::endl << std::endl;
 		delete s1;
 	}
-//	{
-//		const Animal* meta = new Animal();
-//		const Animal* j = new Dog();
-//		const Animal* i = new Cat();
-//
-//		std::cout << std::endl;
-//
-//		std::cout << j->getType() << " " << std::endl;
-//		std::cout << i->getType() << " " << std::endl;
-//
-//		std::cout << std::endl;
-//
-//		i->makeSound(); //will output the cat sound!
-//		j->makeSound();
-//		meta->makeSound();
-//
-//		std::cout << std::endl;
-//
-//		delete meta;
-//		delete j;
-//		delete i;
-//	}
-//	std::cout << std::endl << "\x1b[1;36m############### TEST 2 ###############\x1b[0m" << std::endl << std::endl;
-//	{
-//		const WrongAnimal* bob = new WrongCat();
-//		std::cout << std::endl << bob->getType() << std::endl << std::endl;
-//		bob->makeSound(); //will *not* output the cat sound!
-//
-//		delete bob;
-//	}
-//	std::cout << std::endl << "\x1b[1;36m############### TEST 3 ###############\x1b[0m" << std::endl << std::endl;
-//	{
-//		const WrongCat bob;
-//
-//		std::cout << std::endl << bob.getType() << std::endl << std::endl;
-//		bob.makeSound();
-//		std::cout << std::endl;
-//	}
-//	std::cout << std::endl << "\x1b[1;36m############### TEST 4 ###############\x1b[0m" << std::endl << std::endl;
-//	{
-//		const Animal *steve = new Dog();
-//		std::cout << std::endl;
-//		func(steve);
-//		std::cout << std::endl;
-//		delete steve;
-//		std::cout << std::endl;
-//	}
-//	std::cout << std::endl << "\x1b[1;36m############### TEST 5 ###############\x1b[0m" << std::endl << std::endl;
-//	{
-//		const WrongAnimal *steve = new WrongCat();
-//		std::cout << std::endl;
-//		Wrongfunc(steve);
-//		std::cout << std::endl;
-//		delete steve;
-//		std::cout << std::endl;
-//	}
+	std::cout << std::endl << "\x1b[1;36m############### TEST 2 ###############\x1b[0m" << std::endl << std::endl;
+	{
+		Animal	*tab[10];
+
+		for (int i = 0; i < 5; i++)
+			tab[i] = new Dog();
+		std::cout << std::endl;
+		for (int i = 5; i < 10; i++)
+			tab[i] = new Cat();
+		std::cout << std::endl;
+		for (int i = 0; i < 10; i++)
+			tab[i]->makeSound();
+		std::cout << std::endl;
+		for (int i = 0; i < 10; i++)
+			delete tab[i];
+	}
+	std::cout << std::endl << "\x1b[1;36m############### TEST 3 ###############\x1b[0m" << std::endl << std::endl;
+	{
+		const Animal *j = new Dog();
+		const Animal *i = new Cat();
+		std::cout << std::endl;
+		delete j;//should not create a leak
+		delete i;
+	}
 	std::cout << std::endl;
 	return 0;
 }
