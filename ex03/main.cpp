@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	std::cout << "Hello, World!" << std::endl;
+	std::cout << std::endl << "\x1b[1;36m############### TEST 1 ###############\x1b[0m" << std::endl << std::endl;
 	{
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -20,6 +20,27 @@ int main(void)
 		ICharacter* bob = new Character("bob");
 		me->use(0, *bob);
 		me->use(1, *bob);
+		delete bob;
+		delete me;
+		delete src;
+	}
+	std::cout << std::endl << "\x1b[1;36m############### TEST 2 ###############\x1b[0m" << std::endl << std::endl;
+	{
+		ICharacter *bob = new Character("bob");
+		ICharacter *me = new Character("me");
+		IMateriaSource* src = new MateriaSource();
+
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+
+		int i = -1;
+		while (++i < 4)
+		{
+			bob->equip(src->createMateria("ice"));
+		}
+		bob->use(2, *me);
+		bob->unequip(2);
+
 		delete bob;
 		delete me;
 		delete src;

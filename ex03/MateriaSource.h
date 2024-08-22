@@ -12,8 +12,11 @@ class MateriaSource : public IMateriaSource
 
 		MateriaSource & operator=( const MateriaSource & thing );
 
+		void learnMateria(AMateria * m);
+		AMateria * createMateria(std::string const & type);
+
 	private:
-		AMateria learned[4];
+		AMateria *learned[4];
 };
 
 

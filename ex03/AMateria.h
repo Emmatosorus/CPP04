@@ -2,18 +2,18 @@
 #define AMATERIA_H
 
 #include <iostream>
+#include <string>
 #include "ICharacter.h"
 
 class AMateria
 {
 	protected:
-		std::string	type;
-
-	public:
 		AMateria();
+		std::string	type;
+	public:
 		AMateria(std::string const & type);
 		AMateria( const AMateria & thing);
-		~AMateria();
+		virtual ~AMateria();
 
 		AMateria & operator=( const AMateria & thing);
 
