@@ -5,7 +5,15 @@
 
 class Cure : public AMateria
 {
+	public:
+		Cure();
+		Cure( const Cure & thing );
+		~Cure();
 
+		Cure & operator=( const Cure & thing );
+
+		Cure & clone( void );
+		void use( ICharacter & target);
 };
 
 

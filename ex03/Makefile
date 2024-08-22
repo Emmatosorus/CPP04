@@ -7,7 +7,14 @@ OBJ_DIR = .obj/
 
 SRC = \
 	main.cpp \
-	AMateria.cpp
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	ICharacter.cpp \
+	IMateriaSource.cpp \
+	MateriaSource.cpp
+
 
 OBJ =	$(SRC:%.cpp=$(OBJ_DIR)%.o)
 

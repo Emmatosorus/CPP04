@@ -1,5 +1,5 @@
 #ifndef ICHARACTER_H
-#define EICHARACTER_H
+#define ICHARACTER_H
 
 #include "AMateria.h"
 
