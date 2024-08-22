@@ -5,7 +5,15 @@
 
 class Ice : public AMateria
 {
+	public:
+		Ice();
+		Ice( const Ice & thing);
+		~Ice();
 
+		Ice & operator=( const Ice & thing );
+
+		Ice & clone( void );
+		void	use( ICharacter & target);
 };
 
 
