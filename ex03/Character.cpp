@@ -103,4 +103,6 @@ void	Character::use(int idx, ICharacter &target)
 {
 	if (this->inventory[idx] != 0)
 		this->inventory[idx]->use(target);
+	else
+		std::cout << "No Materia stored at index " << idx << std::endl;
 }
