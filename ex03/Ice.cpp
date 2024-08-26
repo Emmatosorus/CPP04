@@ -2,7 +2,7 @@
 
 Ice::Ice()
 {
-	this->type = "cure";
+	this->type = "ice";
 }
 
 Ice::Ice(const Ice &thing) : AMateria( thing )
@@ -27,5 +27,5 @@ Ice *Ice::clone() const
 
 void Ice::use(ICharacter &target)
 {
-	std::cout << "Ice : \"* shoots an ice bolt at " << target.getName() << " *\"" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

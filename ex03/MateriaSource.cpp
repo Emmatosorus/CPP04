@@ -33,22 +33,24 @@ MateriaSource & MateriaSource::operator=(const MateriaSource &thing)
 
 void MateriaSource::learnMateria(AMateria *m)
 {
-	int i = 0;
+	int i = -1;
 	while (++i < 4 && this->learned[i])
 		;
 	if (i == 4)
+	{
+		delete m;
 		return ;
+	}
 	this->learned[i] = m->clone();
 	delete m;
 }
 
 AMateria * MateriaSource::createMateria(const std::string &type)
 {
-	AMateria * truc;
-	truc = 0;
-	if (type == "ice")
-		truc = new Ice();
-	else if (type == "cure")
-		truc = new Cure();
-	return (truc);
+	int i = 0;
+	while (i < 4 && this->learned[i] != 0 && this->learned[i]->getType() != type)
+		i++;
+	if (i == 4 || this->learned[i] == 0)
+		return (0);
+	return (this->learned[i]->clone());
 }

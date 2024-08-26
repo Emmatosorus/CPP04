@@ -23,11 +23,14 @@ Character::~Character()
 	for (int i = 0; i < 4; i++)
 		if (this->inventory[i])
 			delete this->inventory[i];
-	if (this->NbCharacter == 0)
+	if (this->NbCharacter <= 0)
 	{
 		for (int i = 0; i < 20; i++)
 			if (this->surrounding[i])
+			{
 				delete this->surrounding[i];
+				this->surrounding[i] = 0;
+			}
 		GC_nb = 0;
 	}
 }
@@ -70,7 +73,7 @@ std::string	const & Character::getName() const
 void Character::equip( AMateria * m)
 {
 	int	i = 0;
-	while (i < 4 && this->inventory[i])
+	while (i < 4 && this->inventory[i] != 0)
 	{
 		i++;
 	}
@@ -84,7 +87,7 @@ void Character::unequip(int idx)
 	int i = -1;
 	while (++i < 20)
 	{
-		if (!this->surrounding[i])
+		if (this->surrounding[i] == 0)
 			break;
 	}
 	if (i == 20)
@@ -98,5 +101,6 @@ void Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter &target)
 {
-	this->inventory[idx]->use(target);
+	if (this->inventory[idx] != 0)
+		this->inventory[idx]->use(target);
 }
