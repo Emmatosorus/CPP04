@@ -1,10 +1,10 @@
 #ifndef CAT_H
 # define CAT_H
 
-#include "Animal.h"
+#include "AAnimal.h"
 #include "Brain.h"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 	public:
 		Cat();

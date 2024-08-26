@@ -1,10 +1,10 @@
 #ifndef DOG_H
 # define DOG_H
 
-#include "Animal.h"
+#include "AAnimal.h"
 #include "Brain.h"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 	public:
 		Dog();
