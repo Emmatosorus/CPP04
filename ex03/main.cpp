@@ -149,6 +149,9 @@ int main(void)
 		steve1->equip(src->createMateria("cure"));
 		steve1->use(0, *me);
 
+		steve1->equip(src->createMateria("ice"));
+		steve1->use(0, *me);
+
 		delete steve1;
 		delete src;
 		delete me;
