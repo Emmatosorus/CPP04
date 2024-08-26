@@ -21,12 +21,12 @@ Character::~Character()
 {
 	this->NbCharacter--;
 	for (int i = 0; i < 4; i++)
-		if (this->inventory[i])
+		if (this->inventory[i] != 0)
 			delete this->inventory[i];
 	if (this->NbCharacter <= 0)
 	{
 		for (int i = 0; i < 20; i++)
-			if (this->surrounding[i])
+			if (this->surrounding[i] != 0)
 			{
 				delete this->surrounding[i];
 				this->surrounding[i] = 0;
