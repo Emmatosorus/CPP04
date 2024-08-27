@@ -8,11 +8,9 @@ int main( void )
 	// ### SHOULD NOT COMPILE ###
 //	std::cout << std::endl << "\x1b[1;36m############### TEST 0 ###############\x1b[0m" << std::endl << std::endl;
 //	{
-//		const Animal *j = new Dog();
-//		const Animal *i = new Cat();
+//		AAnimal j = AAnimal();
 //		std::cout << std::endl;
 //		delete j;
-//		delete i;
 //	}
 	std::cout << std::endl << "\x1b[1;36m############### TEST 1 ###############\x1b[0m" << std::endl << std::endl;
 	{
